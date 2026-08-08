@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meal Planner AI Orchestrator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <h1>Meal Planner AI Orchestrator</h1>
+      <p>Switch agents ON/OFF, run the orchestrator, and trace the workflow from Nutritionist → Chef → Fitness Coach.</p>
+    </div>
+  </header>
+
+  <main class="app-grid">
+    <section class="panel controls-panel">
+      <h2>Agents</h2>
+      <div class="agent-card">
+        <div class="agent-details">
+          <strong>Nutritionist</strong>
+          <span>Generates healthy nutrition guidance.</span>
+        </div>
+        <button class="toggle-btn on" data-agent="nutritionist">ON</button>
+      </div>
+      <div class="agent-card">
+        <div class="agent-details">
+          <strong>Chef</strong>
+          <span>Builds recipe ideas from nutrition guidance.</span>
+        </div>
+        <button class="toggle-btn on" data-agent="chef">ON</button>
+      </div>
+      <div class="agent-card">
+        <div class="agent-details">
+          <strong>Fitness Coach</strong>
+          <span>Recommends workouts based on the meal plan.</span>
+        </div>
+        <button class="toggle-btn on" data-agent="fitnessCoach">ON</button>
+      </div>
+      <div class="input-block">
+        <label for="userPrompt">Your meal preference or goal</label>
+        <textarea id="userPrompt" placeholder="e.g. high-protein vegetarian meals for weight loss" rows="4"></textarea>
+      </div>
+      <button id="runButton" class="run-btn">Run Orchestrator</button>
+    </section>
+
+    <section class="panel results-panel">
+      <h2>Results</h2>
+      <div id="results" class="results-list">
+        <p class="empty-state">Run the orchestrator to see agent outputs here.</p>
+      </div>
+    </section>
+
+    <section class="panel trace-panel">
+      <h2>Workflow Trace</h2>
+      <div id="trace" class="trace-list">
+        <p class="empty-state">The workflow trace will appear here.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
